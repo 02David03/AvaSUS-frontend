@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AvasusImg from '../assets/images/avasus.png';
+import Lupa from '../assets/icons/lupa.svg';
 
 const Header = () => {
   const [activePage, setActivePage] = useState('/');
@@ -26,7 +27,16 @@ const Header = () => {
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold'}> Início </Link>
           <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold'}> Cursos </Link>
         </div>
-        <input type="text" className='ms-auto border rounded-md' placeholder='escreva' />
+        <div className="flex relative group justify-center w-1/4 items-center">
+          <span class="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
+            <img className='ps-2' src={Lupa} alt="Icone de lupa" />
+          </span>
+          <input
+            type="text"
+            placeholder="Busque por um assunto..."
+            class="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray-light rounded-full focus:border-gray-dark outline-none"
+          />
+        </div> 
       </div>
     </header>
   )
