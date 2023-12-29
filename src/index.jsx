@@ -5,8 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from './routes/root';
 import ErrorPage from "./routes/error-page";
+import { ThemeProvider } from "@material-tailwind/react";
+
 //pages
-import Home from './pages/home';
+import Home from './pages/home/home';
 import Coursers from './pages/coursers';
 
 const router = createBrowserRouter([
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
