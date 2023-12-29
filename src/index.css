@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   margin: 0;
+  width: 100vw;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,3 +42,57 @@ p {
   margin: 0;
 }
 
+@media only screen and (max-width: 1280px) {
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}

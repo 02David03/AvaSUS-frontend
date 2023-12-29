@@ -9,26 +9,26 @@ const Footer = () => {
 
   return(
     <footer className="w-screen">
-      <div className="flex flex-col items-center justify-center bg-red py-8">
+      <div className="flex flex-col items-center justify-center bg-red py-4 md:py-8">
         <h3 className="text-white mb-2">
           Realização
         </h3>
 
-        <div className="flex gap-12">
-          <img src={LaisLogo} alt="Logo Lais" />
-          <img src={UfrnLogo} alt="Logo Ufrn" />
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-12 w-auto">
+          <img className='scale-50 sm:scale-75 lg:scale-100' src={LaisLogo} alt="Logo Lais" />
+          <img className='scale-50 sm:scale-75 lg:scale-100' src={UfrnLogo} alt="Logo Ufrn" />
         </div>
       </div>
 
-      <div className='flex justify-center bg-black py-8'>
-        <div className='container flex justify-around'>
-          <div className='w-52'>
+      <div className='flex justify-center bg-black py-4 md:py-8'>
+        <div className='container flex flex-col sm:flex-row items-center sm:items-start justify-around gap-2 sm:gap-0'>
+          <div className='flex flex-col items-center sm:items-start w-52'>
             <img className='w-28 mb-2' src={LaisLogo} alt="Logo Lais" />
-            <p className='text-white'>Laboratório de Inovação Tecnológica em Saúde.</p>
+            <p className='text-white text-center sm:text-start'>Laboratório de Inovação Tecnológica em Saúde.</p>
           </div>
 
-          <div className='flex flex-col'>
-            <h3 className='text-white mb-4'> Links Úteis </h3>
+          <div className='flex flex-col items-center sm:items-start'>
+            <h3 className='text-white mb-1 sm:mb-4'> Links Úteis </h3>
             <Link to='/' className='text-white'> Início </Link>
             <Link to='/coursers' className='text-white mt-2' >Módulos </Link>
           </div>
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='flex justify-center text-white bg-black-light py-8'>
+      <div className='flex justify-center text-white bg-black-light py-4 md:py-8'>
         <h5> 2022 © LAIS (HUOL). Todos os direitos reservados </h5>
       </div>
     </footer>
