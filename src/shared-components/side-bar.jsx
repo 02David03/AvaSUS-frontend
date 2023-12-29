@@ -86,7 +86,7 @@ function SideBar() {
             <input
               type="text"
               placeholder="Busque por um assunto..."
-              class="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray-light rounded-full focus:border-gray-dark outline-none"
+              class="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
             />
           </div>
 

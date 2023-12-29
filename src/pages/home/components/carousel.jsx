@@ -5,33 +5,35 @@ import Slide03 from '../../../assets/images/slide3.jpg';
 
 export function CarouselAvasus() {
   return (
-    <Carousel
-      loop
-      autoplay
-      autoplayDelay={7000}
-      className="!h-760px"
-      prevArrow={({handlePrev}) => arrowBtn(handlePrev)}
-      nextArrow={({handleNext}) => arrowBtn(handleNext, false)}
-      navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-          {new Array(length).fill("").map((_, i) => (
-            <span
-              key={i}
-              className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-              }`}
-              onClick={() => setActiveIndex(i)}
-            />
-          ))}
-        </div>
-      )}
-    >
-      <img src={Slide01} alt="slide 1" className="h-full w-full object-cover" />
+    <section>
+      <Carousel
+        loop
+        autoplay
+        autoplayDelay={7000}
+        className="!h-760px"
+        prevArrow={({handlePrev}) => arrowBtn(handlePrev)}
+        nextArrow={({handleNext}) => arrowBtn(handleNext, false)}
+        navigation={({ setActiveIndex, activeIndex, length }) => (
+          <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+            {new Array(length).fill("").map((_, i) => (
+              <span
+                key={i}
+                className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                  activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                }`}
+                onClick={() => setActiveIndex(i)}
+              />
+            ))}
+          </div>
+        )}
+      >
+        <img src={Slide01} alt="slide 1" className="h-full w-full object-cover" />
 
-      <img src={Slide02} alt="slide 2" className="h-full w-full object-cover" />
+        <img src={Slide02} alt="slide 2" className="h-full w-full object-cover" />
 
-      <img src={Slide03} alt="slide 3" className="h-full w-full object-cover" />
-    </Carousel>
+        <img src={Slide03} alt="slide 3" className="h-full w-full object-cover" />
+      </Carousel>
+    </section>
   );
 }
 
