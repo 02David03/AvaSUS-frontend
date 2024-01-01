@@ -1,4 +1,4 @@
-export default function Partners() {
+export default function MainPartners() {
   const partners = [
     {title: 'Governo do RN', description:'Governo do Estado do Rio Grande do Norte.'},
     {title: 'SESAP', description:'Secretaria de Saúde Pública do Estado do Rio Grande do Norte.'},

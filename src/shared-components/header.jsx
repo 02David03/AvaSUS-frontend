@@ -26,6 +26,7 @@ const Header = () => {
         <div className='flex align-items-center gap-8 ms-12'>
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold hover:text-gray-dark'}> Início </Link>
           <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold hover:text-gray-dark'}> Cursos </Link>
+          <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold hover:text-gray-dark'}> Parceiros </Link>
         </div>
         <div className="flex relative group justify-center w-1/4 items-center">
           <span class="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">

@@ -30,7 +30,8 @@ const Footer = () => {
           <div className='flex flex-col items-center sm:items-start'>
             <h3 className='text-white mb-1 sm:mb-4'> Links Úteis </h3>
             <Link to='/' className='text-white'> Início </Link>
-            <Link to='/coursers' className='text-white mt-2' >Módulos </Link>
+            <Link to='/coursers' className='text-white mt-2' > Módulos </Link>
+            <Link to='/partners' className='text-white mt-2' > Parceiros </Link>
           </div>
 
           <div>

@@ -1,13 +1,13 @@
 import CarouselAvasus from "./components/carousel";
 import Modules from "./components/modules";
-import Partners from "./components/partners";
+import MainPartners from "./components/main_partners";
 
 function Home() {
   return(
     <>
       <CarouselAvasus/>
       <Modules />
-      <Partners />
+      <MainPartners />
     </>
   )
 }

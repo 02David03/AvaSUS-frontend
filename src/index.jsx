@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
-import Root from './routes/root';
-import ErrorPage from "./routes/error-page";
 import { ThemeProvider } from "@material-tailwind/react";
 
 //pages
+import Root from './routes/root';
 import Home from './pages/home/home';
 import Coursers from './pages/coursers';
+import ErrorPage from "./routes/error_page";
+import Partners from './pages/partners/partners';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path:'/coursers',
         element: <Coursers />
+      },
+      {
+        path:'/partners',
+        element: <Partners />
       }
     ]
   },
