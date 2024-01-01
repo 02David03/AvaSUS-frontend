@@ -3,7 +3,7 @@ import Slide01 from '../../../assets/images/slide1.jpg';
 import Slide02 from '../../../assets/images/slide2.jpg';
 import Slide03 from '../../../assets/images/slide3.jpg';
 
-export function CarouselAvasus() {
+export default function CarouselAvasus() {
   return (
     <section>
       <Carousel
