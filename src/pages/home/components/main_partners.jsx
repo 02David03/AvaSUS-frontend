@@ -7,7 +7,7 @@ export default function MainPartners() {
   ]
 
   return(
-    <section className="flex flex-col items-center mb-28">
+    <section className="mb-28">
       <h2 className="text-red text-center mb-5"> Parceiros </h2>
       <div className="container grid grid-cols-4 bg-gray-light p-4 items-baseline gap-4 rounded-2xl">
         {partners.map((partner, index) => {
