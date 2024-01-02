@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import VisualRoot from "../../shared-components/visual_root";
 import PaginationComponent from "../../shared-components/pagination_component";
 import { getPartners, getPartnersbyPage } from "../../sevices/partners";
 import { Spinner } from "@material-tailwind/react";
+import BreadcrumbComponent from "../../shared-components/breadcrumb_component";
 
 function Partners() {
   const [loading, setLoading] = useState(true);
   const [partners, setPartners] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [partnersLength, setPartnersLength] = useState(0);
+  const breadcrumbs = [
+    {name: 'Início', route: '/'},
+    {name: 'Parceiros', route: ''}
+  ];
 
   useEffect(() => {
     const getPartnersLength = async () => {
@@ -34,7 +38,7 @@ function Partners() {
   return(
     loading ? <Spinner className="h-16 w-16 text-red/50 mt-40" /> : 
     <div className="container">
-      <VisualRoot content="Início / Parceiros" className="mt-6"/>
+      <BreadcrumbComponent breadcrumbs={breadcrumbs} className="mt-6"/>
 
       <h1 className="text-red my-6">Nossos parceiros</h1>
 
