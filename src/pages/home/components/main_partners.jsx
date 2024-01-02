@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export default function MainPartners() {
   const partners = [
     {title: 'Governo do RN', description:'Governo do Estado do Rio Grande do Norte.'},
@@ -8,7 +9,8 @@ export default function MainPartners() {
 
   return(
     <section className="mb-28">
-      <h2 className="text-red text-center mb-5"> Parceiros </h2>
+      <h2 className="text-red text-center mb-5"> 
+      <Link to='partners'> Parceiros </Link> </h2>
       <div className="container grid grid-cols-4 bg-gray-light p-4 items-baseline gap-4 rounded-2xl">
         {partners.map((partner, index) => {
           return(
