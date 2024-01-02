@@ -1,6 +1,6 @@
-import CarouselAvasus from "./components/carousel";
-import Modules from "./components/modules";
-import MainPartners from "./components/main_partners";
+import CarouselAvasus from "./sections/carousel";
+import Modules from "./sections/modules";
+import MainPartners from "./sections/main_partners";
 
 function Home() {
   return(
