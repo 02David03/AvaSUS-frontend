@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { IconButton, ButtonGroup } from "@material-tailwind/react";
+import { IconButton, Button, ButtonGroup } from "@material-tailwind/react";
 
 const PaginationComponent = ({
   itemsCount,
@@ -29,11 +29,13 @@ const PaginationComponent = ({
     changePage(currentPage => currentPage + 1);
   };
 
-  const setLastPageAsCurrent = () => {
+  const checkPaginationIntegrity = () => {
     if (currentPage > pagesCount) {
       setCurrentPage(pagesCount);
+    } else if( currentPage < 1) {
+      setCurrentPage(1);
     }
-  };
+  }
 
   let isPageNumberOutOfRange;
 
@@ -41,8 +43,7 @@ const PaginationComponent = ({
     const pageNumber = index + 1;
     const isPageNumberFirst = pageNumber === 1;
     const isPageNumberLast = pageNumber === pagesCount;
-    const isCurrentPageWithinTwoPageNumbers =
-      Math.abs(pageNumber - currentPage) <= 2;
+    const isCurrentPageWithinTwoPageNumbers =  Math.abs(pageNumber - currentPage) <= 2;
 
     if (
       isPageNumberFirst ||
@@ -51,11 +52,11 @@ const PaginationComponent = ({
     ) {
       isPageNumberOutOfRange = false;
       return (
-        <IconButton 
-          key={pageNumber} 
-          onClick={() => onPageNumberClick(pageNumber)}
-          active={pageNumber === currentPage}> 
-          {pageNumber} 
+        <IconButton
+        className={(pageNumber === currentPage ? 'bg-red text-white ' : 'bg-white-dark text-f-black-light ') + ' !border-gray !font-semibold text-lg focus:ring-0'}
+        key={pageNumber}
+        onClick={() => onPageNumberClick(pageNumber)}>
+          {pageNumber}
         </IconButton>
       );
     }
@@ -63,28 +64,31 @@ const PaginationComponent = ({
 
     if (!isPageNumberOutOfRange) {
       isPageNumberOutOfRange = true;
-      return <IconButton key={pageNumber} className="muted" /> 
+      return <IconButton key={pageNumber} className="muted bg-white-dark  border-gray !font-semibold text-lg focus:ring-0"> ... </IconButton> 
     }
 
     return null;
   });
 
-  useEffect(setLastPageAsCurrent, [pagesCount]);
+  useEffect(checkPaginationIntegrity, [currentPage, pagesCount, setCurrentPage]);
 
   return (
-      <ButtonGroup className={className} variant="outlined">
-        <IconButton
-          onClick={onPreviousPageClick}
-          disabled={isCurrentPageFirst}>
-          <p> &lt; Anterior </p>
-        </IconButton>
+      <ButtonGroup className={className + ' rounded-3xl'} variant="outlined" size="md">
+        <Button
+        className={"flex align-center border-gray bg-white-dark gap-2 h-10 px-3"}
+        onClick={onPreviousPageClick}
+        disabled={isCurrentPageFirst}>
+          <p className="text-center text-nowrap !font-semibold"> &lt; Anterior </p>
+        </Button>
+
         {pageNumbers}
 
-        <IconButton 
-          onClick={onNextPageClick}
-          disabled={isCurrentPageLast}>
-          <p> Próximo &gt; </p>
-        </IconButton>
+        <Button 
+        className="flex align-center border-gray bg-white-dark gap-2 h-10"
+        onClick={onNextPageClick}
+        disabled={isCurrentPageLast}>
+          <p className="text-center text-nowrap !font-semibold"> Próximo &gt; </p>
+        </Button>
       </ButtonGroup>
   );
 };
