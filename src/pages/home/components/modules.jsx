@@ -19,7 +19,7 @@ export default function Modules() {
         <div className='flex h-full gap-4'>
           <img className='h-32 w-32 rounded-md' src={Teste} alt="teste" />
 
-          <div className='flex flex-col justify-around h-full'>
+          <div className='flex flex-col justify-around'>
             <h4> Sífilis: Aspectos Clínicos e Diagnóstico Diferencial </h4>
             <p className='text-sm text-red'> LAIS/EBSERH </p>
           </div>
