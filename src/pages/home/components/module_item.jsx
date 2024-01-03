@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Peple_02 from '../../../assets/icons/people2.svg';
 import Clock from '../../../assets/icons/clock.svg';
+import { Stars } from "./stars";
 
 export const ModuleItem = ({course, key}) => {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,8 @@ const Module = ({course, key}) => {
         <img className='w-6' src={Clock} alt="clock" />
         <p> {course.duracao} </p>
       </span>
+
+      <Stars rating={course.avaliacao} />
 
       <button className='bg-gray-dark rounded-full text-white text-lg font-semibold text-nowrap py-2 px-8'> Ver módulo </button>
     </div>

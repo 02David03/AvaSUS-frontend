@@ -92,7 +92,7 @@ function SideBar() {
 
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold mt-6 hover:text-gray-dark'}> Início </Link>
           <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Cursos </Link>
-          <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Cursos </Link>
+          <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Parceiros </Link>
 
         </motion.div>
       </motion.div>
@@ -102,7 +102,7 @@ function SideBar() {
 };
 
 const MenuToggle = ({ toggle }) => (
-  <button className="bg-white absolute cursor-pointer rounded-full z-50 mt-4 ms-4 p-4" onClick={toggle}>
+  <button className="bg-white fixed cursor-pointer rounded-full z-50 mt-4 ms-4 p-4" onClick={toggle}>
     <svg viewBox="0 0 20 20" className="w-6 h-6">
       <Path
         variants={{

@@ -1,6 +1,6 @@
 import api from '../server';
 
-export async function getThreeCoursers (sort='matriculados', order='asc') {
+export async function getThreeCoursers (sort='matriculados', order='desc') {
   try {
     const res = await api.get(`cursos/?_sort=${sort}&_order=${order}&_limit=3`);
     return res.data;

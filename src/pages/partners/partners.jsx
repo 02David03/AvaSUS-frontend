@@ -37,7 +37,7 @@ function Partners() {
   }, [currentPage]);
 
   return(
-    loading ? <Spinner className="h-16 w-16 text-red/50 mt-40" /> : 
+    loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
     <div className="container">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} className="mt-6"/>
 
