@@ -91,7 +91,7 @@ function SideBar() {
           </div>
 
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold mt-6 hover:text-gray-dark'}> Início </Link>
-          <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Cursos </Link>
+          <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Módulos </Link>
           <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Parceiros </Link>
 
         </motion.div>

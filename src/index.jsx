@@ -8,7 +8,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 //pages
 import Root from './routes/root';
 import Home from './pages/home/home';
-import Coursers from './pages/coursers';
+import Coursers from './pages/coursers/coursers';
 import ErrorPage from "./routes/error_page";
 import Partners from './pages/partners/partners';
 

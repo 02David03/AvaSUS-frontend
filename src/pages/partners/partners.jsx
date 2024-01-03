@@ -30,10 +30,10 @@ function Partners() {
       setLoading(true);
       const data = await getPartnersbyPage(currentPage);
       setPartners(data);
+      setLoading(false);
     }
 
     fetchPartners();
-    setLoading(false);
   }, [currentPage]);
 
   return(
