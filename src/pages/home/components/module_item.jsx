@@ -28,7 +28,7 @@ export const ModuleItem = ({course, key}) => {
 const Module = ({course, key}) => {
   return(
     <div key={key} className="flex items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
-      <div className='flex h-full gap-4'>
+      <div className='flex h-full !w-3/5 gap-4'>
         <img className='h-32 w-32 rounded-md' src={course.capa} alt="capa" />
 
         <div className='flex flex-col justify-around'>
@@ -39,7 +39,7 @@ const Module = ({course, key}) => {
 
       <span className='flex items-center gap-2'>
         <img className='w-6' src={Peple_02} alt="people" />
-        <p> {course.matriculados} (humanizar) </p>
+        <p> {course.matriculados.toLocaleString()} </p>
       </span>
 
       <span className='flex items-center gap-2'>
