@@ -9,9 +9,9 @@ export async function getThreeCoursers(sort='matriculados', order='desc') {
   }
 }
 
-export async function getCoursers(categoria='', limit='', page='') {
+export async function getCoursers(category='Todos', limit='', page='') {
   try {
-    const res = await api.get(`cursos/?_categoria=${categoria}&_page=${page}&_limit=${limit}`);
+    const res = await api.get(`cursos/?_page=${page}&_limit=${limit}${category !== 'Todos' ? `&cateroria=${category}` : ''}`);
     return res.data;
   } catch (error) {
     console.log(error);

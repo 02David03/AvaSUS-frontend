@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import Peple_02 from '../../../assets/icons/people2.svg';
 import Clock from '../../../assets/icons/clock.svg';
-import { Stars } from "./stars";
+import { Stars } from "../../../shared-components/stars";
 
-export const ModuleItem = ({course, key}) => {
+export const ModuleItem = ({course}) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(()=> {
@@ -22,12 +22,12 @@ export const ModuleItem = ({course, key}) => {
     decodeImg();
   },[course, setLoading]);
 
-  return(loading ? <LoadModule key={key} /> : <Module key={key} course={course} />);
+  return(loading ? <LoadModule /> : <Module course={course} />);
 }
 
-const Module = ({course, key}) => {
+const Module = ({course}) => {
   return(
-    <div key={key} className="flex items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
+    <div className="flex items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
       <div className='flex h-full !w-3/5 gap-4'>
         <img className='h-32 w-32 rounded-md' src={course.capa} alt="capa" />
 
@@ -54,9 +54,9 @@ const Module = ({course, key}) => {
   )
 }
 
-const LoadModule = (key) => {
+const LoadModule = () => {
   return(
-    <div key={key} className="flex animate-pulse items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
+    <div className="flex animate-pulse items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
       <div className='flex h-full gap-4'>
         <div className="flex justify-center items-center h-32 w-32 rounded-md bg-gray dark:bg-gray-dark">
           <svg className="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
@@ -67,7 +67,7 @@ const LoadModule = (key) => {
 
         <div className='flex flex-col justify-around'>
           <div className="h-4 rounded w-96 bg-gray dark:bg-gray-dark" />
-          <div class="h-2 rounded w-72 bg-gray dark:bg-gray-dark" />
+          <div className="h-2 rounded w-72 bg-gray dark:bg-gray-dark" />
         </div>
 
       </div>

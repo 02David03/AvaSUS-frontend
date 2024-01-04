@@ -43,7 +43,7 @@ function Partners() {
 
       <h1 className="text-red my-6">Nossos parceiros</h1>
 
-      <h5 className="text-f-black-light"> <i> 6 de {partnersLength} resultados </i> </h5>
+      <h5 className="text-f-black-light"> <i> {partners.length} de {partnersLength} resultados </i> </h5>
       
       <div className="grid grid-cols-3 items-baseline gap-6">
         {partners.map((partner, index) => {

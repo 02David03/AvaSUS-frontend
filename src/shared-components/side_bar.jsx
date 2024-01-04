@@ -80,13 +80,13 @@ function SideBar() {
           <Link to={'/'} className="flex justify-center"> <img src={AvasusImg} alt="Avasus" /> </Link>
 
           <div className="flex relative group justify-center w-full items-center mt-8">
-            <span class="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
+            <span className="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
               <img className='ps-2' src={Lupa} alt="Icone de lupa" />
             </span>
             <input
               type="text"
               placeholder="Busque por um assunto..."
-              class="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
+              className="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
             />
           </div>
 

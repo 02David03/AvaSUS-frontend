@@ -29,13 +29,13 @@ const Header = () => {
           <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold hover:text-gray-dark'}> Parceiros </Link>
         </div>
         <div className="flex relative group justify-center w-1/4 items-center">
-          <span class="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
+          <span className="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
             <img className='ps-2' src={Lupa} alt="Icone de lupa" />
           </span>
           <input
             type="text"
             placeholder="Busque por um assunto..."
-            class="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
+            className="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
           />
         </div> 
       </div>

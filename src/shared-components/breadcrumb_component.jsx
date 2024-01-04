@@ -17,7 +17,7 @@ const BreadcrumbComponent = ({breadcrumbs, color='black', className=''}) => {
     <Breadcrumbs className={ className + ' ps-0' }>
       {breadcrumbs.map((item, index) => {
         return(
-          <Link to={item.route} className={selectedColor()[index !== breadcrumbs.length - 1 ? 0 : 1] + ' font-semibold text-lg'}>
+          <Link key={index} to={item.route} className={selectedColor()[index !== breadcrumbs.length - 1 ? 0 : 1] + ' font-semibold text-lg'}>
             {item.name}
           </Link>
         )

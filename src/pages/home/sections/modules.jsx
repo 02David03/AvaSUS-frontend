@@ -41,7 +41,7 @@ export default function Modules() {
       </div>
 
       {coursers.map((course, index) => {
-        return( <ModuleItem key={index} course={course} />);
+        return( <div key={index}> <ModuleItem key={index} course={course} /> </div>);
       })}
 
       <button className='bg-gray-dark rounded-2xl text-white text-2xl w-96 font-semibold self-center py-2 mt-8'>
