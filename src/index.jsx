@@ -9,6 +9,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import Root from './routes/root';
 import Home from './pages/home/home';
 import Coursers from './pages/coursers/coursers';
+import CourseDetails from './pages/coursers/details';
 import ErrorPage from "./routes/error_page";
 import Partners from './pages/partners/partners';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path:'/coursers',
         element: <Coursers />
+      },
+      {
+        path:'/coursers/:courseId',
+        element: <CourseDetails />
       },
       {
         path:'/partners',

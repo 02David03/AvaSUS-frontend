@@ -53,7 +53,7 @@ const CourseComponent = ({course}) => {
 
       <p className="line-clamp-4 font-medium my-3"> {course.resumo} </p>
 
-      <h5 className="text-end font-semibold text-gray-dark"> <Link to='/courses'> Ver Curso </Link> </h5>
+      <h5 className="text-end font-semibold text-gray-dark"> <Link to={ '/coursers/' + course.id}> Ver Curso </Link> </h5>
     </div>
   );
 

@@ -32,3 +32,12 @@ export async function getCategories() {
     console.log(error);
   }
 }
+
+export async function getCourseById(id) {
+  try {
+    const res = await api.get(`cursos/?id=${id}`);
+    return res.data[0];
+  } catch (error) {
+    console.log(error);
+  }
+}

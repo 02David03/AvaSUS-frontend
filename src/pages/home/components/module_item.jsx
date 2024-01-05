@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Peple_02 from '../../../assets/icons/people2.svg';
 import Clock from '../../../assets/icons/clock.svg';
+import { Link } from "react-router-dom";
 import { Stars } from "../../../shared-components/stars";
 
 export const ModuleItem = ({course}) => {
@@ -49,7 +50,10 @@ const Module = ({course}) => {
 
       <Stars rating={course.avaliacao} />
 
-      <button className='bg-gray-dark rounded-full text-white text-lg font-semibold text-nowrap py-2 px-8'> Ver módulo </button>
+      <Link to={ '/coursers/' + course.id}>
+        <button className='bg-gray-dark rounded-full text-white text-lg font-semibold text-nowrap py-2 px-8'> Ver módulo </button>
+      </Link>
+
     </div>
   )
 }
