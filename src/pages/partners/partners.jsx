@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PaginationComponent from "../../shared-components/pagination_component";
 import { getPartners, getPartnersbyPage } from "../../sevices/partners";
 import { Spinner } from "@material-tailwind/react";
-import DecodeImg from "./components/decode_img";
+import DecodeImg from "../../shared-components/decode_img";
 import BreadcrumbComponent from "../../shared-components/breadcrumb_component";
 
 function Partners() {
@@ -49,7 +49,8 @@ function Partners() {
         {partners.map((partner, index) => {
           return(
             <div key={index} className="flex flex-col items-center">
-              <DecodeImg imgURL={partner.capa} />
+              <DecodeImg imgClassName="w-full h-full border-b-3 border-red pb-3 mb-3"
+              loadingClassName="h-52" imgURL={partner.capa} />
               <h3 className="text-center"> {partner.titulo} </h3>
             </div>
           )

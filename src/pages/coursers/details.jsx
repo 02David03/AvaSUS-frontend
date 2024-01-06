@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { getCourseById } from "../../sevices/coursers";
 import { Spinner } from "@material-tailwind/react";
 import { Stars } from "../../shared-components/stars";
+import { SpecficGoals } from "./components/specifc_goals";
+import DecodeImg from "../../shared-components/decode_img";
 import CourseHeader from "./components/course_header";
 import Peple_02 from '../../assets/icons/people2.svg';
 import Clock from '../../assets/icons/clock.svg';
@@ -26,10 +28,14 @@ export default function CourseDetails() {
     getCourse();
   }, [courseId]);
 
+  const handleDuration = (duration) => {
+    const durationExtended = duration > 1 ? duration.replace('h',' horas') : duration.replace('h',' hora')
+    return durationExtended;
+  }
+
   return(
     loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
     <>
-
     <CourseHeader course={course} />
       <div className="container">
         <h1 className="text-red text-center mt-4"> Informações Gerais do Curso </h1>
@@ -37,7 +43,7 @@ export default function CourseDetails() {
         <div className="flex items-center justify-between my-8 w-full">
           <div className="flex items-center gap-3">
             <img src={Clock} alt="relógio" />
-            <p className="font-bold text-lg"> {course.duracao} </p>
+            <p className="font-bold text-lg"> {handleDuration(course.duracao)} </p>
           </div>
 
           <div className="flex items-center gap-3">
@@ -60,8 +66,7 @@ export default function CourseDetails() {
         <p className="font-semibold mb-2"> Objetivo Geral</p>
         <p> {course.objetivo_geral} </p>
 
-        <p className="font-semibold mt-5 mb-2"> Objetivos Especificos</p>
-        <p> {course.objetivo_especifico} </p>
+        <SpecficGoals goals={course.objetivo_especifico} />
 
         <h3 className="text-red text-center my-3"> Recursos educacionais </h3>
         {course.conteudo.map((content, index) => {
@@ -70,6 +75,16 @@ export default function CourseDetails() {
         
 
         <h3 className="text-red text-center my-12"> Créditos </h3>
+        <div className="grid grid-cols-4 place-items-center place-content-center gap-4 mb-8">
+          {course.creditos.map((credit, index) => {
+            return(
+              <div className="flex items-center justify-center h-40 w-full" key={index}>
+                <DecodeImg loadingClassName='h-full' imgClassName="w-auto h-full" imgURL={credit.capa} />
+              </div>
+            )
+          })
+          }
+        </div>
       </div>
     </>
   );
