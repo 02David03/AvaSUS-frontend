@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import BreadcrumbComponent from "../../shared-components/breadcrumb_component";
 import { getCourseById } from "../../sevices/coursers";
+import { Spinner } from "@material-tailwind/react";
+import { Stars } from "../../shared-components/stars";
+import CourseHeader from "./components/course_header";
 import Peple_02 from '../../assets/icons/people2.svg';
 import Clock from '../../assets/icons/clock.svg';
 import Callendar from '../../assets/icons/callendar.svg';
-import { Stars } from "../../shared-components/stars";
 
 
 export default function CourseDetails() {
   const [course, setCourse] = useState({});
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   let { courseId } = useParams();
@@ -20,11 +20,6 @@ export default function CourseDetails() {
       setLoading(true);
       const data = await getCourseById(courseId);
       setCourse(data);
-      setBreadcrumbs([
-        {name: 'Início', route: '/'},
-        {name: 'Módulos', route: '/coursers'},
-        {name: data.titulo, route: ''}
-      ]);
       setLoading(false);
     }
 
@@ -32,22 +27,10 @@ export default function CourseDetails() {
   }, [courseId]);
 
   return(
-    loading ? <p> Carregando ... </p> :
+    loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
     <>
-      <div className='w-screen flex justify-center h-80 z-0' 
-      style={{backgroundImage:'url('+ course.capa +')',
-        backgroundRepeat: "no-repeat",
-        backgroundSize:"cover"}} >
-          <div className="absolute h-80 bg-black opacity-50 w-screen z-10" />
-          <div className="container z-20">
-            <BreadcrumbComponent breadcrumbs={breadcrumbs} color="white" className="mt-6 text-white" />
 
-            <h1 className="text-white mt-8"> {course.titulo} </h1>
-
-            <h2 className="text-white mt-4"> {course.parceiros} </h2>
-          </div>
-      </div>
-
+    <CourseHeader course={course} />
       <div className="container">
         <h1 className="text-red text-center mt-4"> Informações Gerais do Curso </h1>
         
