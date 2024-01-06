@@ -41,3 +41,32 @@ export async function getCourseById(id) {
     console.log(error);
   }
 }
+
+export async function getCourseByTitle(title = '', limit = '', page = '') {
+  try {
+    const res = await api.get(`cursos`);
+    const allCoursers = res.data;
+    const coursersWithTitle = allCoursers.filter((course) => {
+      return course.titulo.toLowerCase().includes(title.toLowerCase());
+    });
+    if( limit !=='' && page !=='' ) {
+      let coursersPerPage = [];
+
+      for (let i = 0; i < coursersWithTitle.length ; i = i + limit) {
+        let coursersByLimit = [];
+
+        for (let j = 0; j < limit; j++) {
+          if( j + i >= coursersWithTitle.length) break;
+          coursersByLimit.push(coursersWithTitle[j + i]);
+        }
+
+        coursersPerPage.push(coursersByLimit);
+      }
+      
+      return coursersPerPage[page - 1];
+    }
+    return coursersWithTitle;
+  } catch (error) {
+    console.log(error);
+  }
+}

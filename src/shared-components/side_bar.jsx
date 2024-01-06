@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import { motion, useCycle } from "framer-motion";
 import AvasusImg from '../assets/images/avasus.png';
-import Lupa from '../assets/icons/lupa.svg';
+import { SearchForm } from "./search_form";
 
 const sidebar = {
   open: () => ({
@@ -79,16 +79,7 @@ function SideBar() {
         <motion.div className="flex flex-col" variants={variants}>
           <Link to={'/'} className="flex justify-center"> <img src={AvasusImg} alt="Avasus" /> </Link>
 
-          <div className="flex relative group justify-center w-full items-center mt-8">
-            <span className="flex absolute left-0 bg-transparent rounded text-base text-gray-600 p-2">
-              <img className='ps-2' src={Lupa} alt="Icone de lupa" />
-            </span>
-            <input
-              type="text"
-              placeholder="Busque por um assunto..."
-              className="flex py-2 w-full ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray rounded-full focus:border-gray-dark outline-none"
-            />
-          </div>
+          <SearchForm />
 
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold mt-6 hover:text-gray-dark'}> Início </Link>
           <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold mt-2 hover:text-gray-dark'}> Módulos </Link>
