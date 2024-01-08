@@ -12,6 +12,7 @@ import Coursers from './pages/coursers/coursers';
 import CourseDetails from './pages/coursers/details';
 import ErrorPage from "./routes/error_page";
 import Partners from './pages/partners/partners';
+import Transparency from './pages/transparency/transparency';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
       {
         path:'/partners',
         element: <Partners />
-      }
+      },
+      {
+        path:'/transparency',
+        element: <Transparency />
+      },
     ]
   },
 ]);

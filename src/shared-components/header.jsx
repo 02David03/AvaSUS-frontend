@@ -27,6 +27,7 @@ const Header = () => {
           <Link to={'/'} className={ isActive('/') + ' text-xl font-semibold hover:text-gray-dark'}> Início </Link>
           <Link to={'coursers'} className={ isActive('coursers') + ' text-xl font-semibold hover:text-gray-dark'}> Módulos </Link>
           <Link to={'partners'} className={ isActive('partners') + ' text-xl font-semibold hover:text-gray-dark'}> Parceiros </Link>
+          <Link to={'transparency'} className={ isActive('transparency') + ' text-xl font-semibold hover:text-gray-dark'}> Transparência </Link>
         </div>
         <div className='w-4/12'>
           <SearchForm />
