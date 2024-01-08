@@ -18,7 +18,7 @@ export default function Root() {
 
   return (
     <>
-      {screenWidth > 768 ? <Header /> : <SideBar /> }
+      {screenWidth > 1024 ? <Header /> : <SideBar /> }
       <div className="flex flex-col items-center justify-center" id="detail">
         <Outlet />
       </div>

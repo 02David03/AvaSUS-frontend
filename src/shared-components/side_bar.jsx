@@ -75,9 +75,9 @@ function SideBar() {
       initial={false}
       animate={isOpen ? "open" : "closed"}
     >
-      <motion.div className="fixed w-72 top-0 left-0 bottom-0 py-20 px-4 bg-white z-40" variants={sidebar}>
+      <motion.div className="fixed w-80 top-0 left-0 bottom-0 py-20 px-4 bg-white z-40" variants={sidebar}>
         <motion.div className="flex flex-col" variants={variants}>
-          <Link to={'/'} className="flex justify-center"> <img src={AvasusImg} alt="Avasus" /> </Link>
+          <Link to={'/'} className="flex justify-center mb-6"> <img src={AvasusImg} alt="Avasus" /> </Link>
 
           <SearchForm />
 
