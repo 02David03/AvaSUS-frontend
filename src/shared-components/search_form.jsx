@@ -15,7 +15,7 @@ export const SearchForm = () => {
         <img className='ps-2' src={Lupa} alt="Icone de lupa" />
       </span>
       
-      <div className="flex w-full">
+      <div className="flex w-full ">
         <input
           ref={inputRef}
           type="text"
@@ -23,11 +23,11 @@ export const SearchForm = () => {
           onFocus={ () => setIsFocused(true)}
           // eslint-disable-next-line no-restricted-globals
           onChange={ () => setInputValue(event.target.value)}
-          className={ (isFocused ? " w-3/4 w-xl-4/5 rounded-s-full border-e-0" : "w-full rounded-full" ) + " flex py-2 ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray focus:border-gray-dark outline-none"}
+          className={ (isFocused ? "xl:w-4/5 w-3/4 rounded-s-full border-e-0" : "w-full rounded-full" ) + " flex py-2 ps-12 pe-3 placeholder-gray-600 text-black text-18px flex-none border-2 border-gray focus:border-gray-dark outline-none"}
         />
         {
           isFocused &&
-            <button className="w-1/4 w-xl-1/5 text-white rounded-e-full bg-red hover:bg-red-600">Buscar</button>
+            <button className="xl:w-1/5 w-1/4 text-white rounded-e-full bg-red hover:bg-red-600">Buscar</button>
         }
       </div>
     </form>

@@ -28,8 +28,8 @@ export const ModuleItem = ({course}) => {
 
 const Module = ({course}) => {
   return(
-    <div className="flex items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
-      <div className='flex h-full !w-3/5 gap-4'>
+    <div className="flex xl:flex-row flex-col items-center gap-5 bg-gray-light rounded-2xl p-5 mt-4">
+      <div className='flex h-full 2xl:w-3/5 xl:w-1/2 w-full gap-4'>
         <img className='h-32 w-32 rounded-md' src={course.capa} alt="capa" />
 
         <div className='flex flex-col justify-around'>
@@ -38,21 +38,25 @@ const Module = ({course}) => {
         </div>
       </div>
 
-      <span className='flex items-center gap-2'>
-        <img className='w-6' src={Peple_02} alt="people" />
-        <p> {course.matriculados.toLocaleString()} </p>
-      </span>
+      <div className="flex sm:flex-row flex-col sm:items-center items-end justify-between 2xl:w-2/5 xl:w-1/2 w-full">
+        <div className="flex itemx-center justify-between w-full sm:me-4 me-0">
+          <span className='flex items-center gap-2'>
+            <img className='w-6' src={Peple_02} alt="people" />
+            <p> {course.matriculados.toLocaleString()} </p>
+          </span>
 
-      <span className='flex items-center gap-2'>
-        <img className='w-6' src={Clock} alt="clock" />
-        <p> {course.duracao} </p>
-      </span>
+          <span className='flex items-center gap-2'>
+            <img className='w-6' src={Clock} alt="clock" />
+            <p> {course.duracao} </p>
+          </span>
 
-      <Stars rating={course.avaliacao} />
+          <Stars rating={course.avaliacao} />
+        </div>
 
-      <Link to={ '/coursers/' + course.id}>
-        <button className='bg-gray-dark rounded-full text-white text-lg font-semibold text-nowrap py-2 px-8'> Ver módulo </button>
-      </Link>
+        <Link to={ '/coursers/details/' + course.id}>
+          <button className='bg-gray-dark rounded-full text-white text-lg font-semibold text-nowrap py-2 sm:mt-0 mt-4 px-8'> Ver módulo </button>
+        </Link>
+      </div>
 
     </div>
   )

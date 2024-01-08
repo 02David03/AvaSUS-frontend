@@ -40,7 +40,7 @@ function Coursers() {
         data = await getCourseByTitle(search); 
       } else {
         data = await getCoursers(categoryActive);
-      } 
+      }
       setCoursersLength(data.length);
       setLoading(false);
     }
@@ -56,8 +56,8 @@ function Coursers() {
         data = await getCourseByTitle(search, 6, currentPage); 
       } else {
         data = await getCoursers(categoryActive, 6, currentPage);
-      } 
-      setCoursers(data);
+      }
+      if(data) setCoursers(data);
     }
 
     fetchCoursers();
@@ -91,22 +91,30 @@ function Coursers() {
         </div>
       }
 
-      <h5 className="text-f-black-light my-5"> <i> {coursers.length} de {coursersLength} resultados </i> </h5>
 
-      <div className="grid grid-cols-3 items-baseline gap-6">
-        {coursers.map((course, index) => {
-          return(
-            <div key={index}> <CourseItem course={course} /> </div>
-          )
-        })}
-      </div>
+      {coursersLength > 0 ?
+      <>
+        <h5 className="text-f-black-light my-5"> <i> {coursers.length} de {coursersLength} resultados </i> </h5>
+        <div className="grid grid-cols-3 items-baseline gap-6">
+          {coursers.map((course, index) => {
+            return(
+              <div key={index}> <CourseItem course={course} /> </div>
+            )
+          })}
+        </div>
 
-      <PaginationComponent 
+        <PaginationComponent 
         className="flex justify-center mt-8 mb-32"
         itemsCount={coursersLength}
         itemsPerPage={6}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}/>
+      </>:      
+      <h4 className="text-f-black-light text-center my-5"> 
+        Não há nenhum módulo educacional abordando <i> "{search}" </i> 
+      </h4>
+
+      }
 
     </div>
   )
