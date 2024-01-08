@@ -53,7 +53,7 @@ const PaginationComponent = ({
       isPageNumberOutOfRange = false;
       return (
         <IconButton
-        className={(pageNumber === currentPage ? 'bg-red text-white ' : 'bg-white-dark text-f-black-light ') + ' !border-gray !font-semibold text-lg focus:ring-0'}
+        className={(pageNumber === currentPage ? 'bg-red text-white ' : 'bg-white-dark text-f-black-light ') + ' !border-gray !font-semibold text-lg xl:h-10 h-9 focus:ring-0'}
         key={pageNumber}
         onClick={() => onPageNumberClick(pageNumber)}>
           {pageNumber}
@@ -64,7 +64,7 @@ const PaginationComponent = ({
 
     if (!isPageNumberOutOfRange) {
       isPageNumberOutOfRange = true;
-      return <IconButton key={pageNumber} className="muted bg-white-dark  border-gray !font-semibold text-lg focus:ring-0"> ... </IconButton> 
+      return <IconButton key={pageNumber} className="muted bg-white-dark border-gray !font-semibold xl:h-10 h-9 text-lg focus:ring-0"> ... </IconButton> 
     }
 
     return null;
@@ -75,7 +75,7 @@ const PaginationComponent = ({
   return (
       <ButtonGroup className={className + ' rounded-3xl'} variant="outlined" size="md">
         <Button
-        className={"flex align-center border-gray bg-white-dark gap-2 h-10 px-3"}
+        className={"flex items-center border-gray bg-white-dark gap-2 xl:h-10 h-9 py-0 px-3"}
         onClick={onPreviousPageClick}
         disabled={isCurrentPageFirst}>
           <p className="text-center text-nowrap !font-semibold"> &lt; Anterior </p>
@@ -84,7 +84,7 @@ const PaginationComponent = ({
         {pageNumbers}
 
         <Button 
-        className="flex align-center border-gray bg-white-dark gap-2 h-10"
+        className="flex items-center border-gray bg-white-dark gap-2 xl:h-10 h-9 py-0"
         onClick={onNextPageClick}
         disabled={isCurrentPageLast}>
           <p className="text-center text-nowrap !font-semibold"> Próximo &gt; </p>

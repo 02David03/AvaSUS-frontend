@@ -8,7 +8,7 @@ export default function MainPartners() {
   ]
 
   return(
-    <section className="mb-28">
+    <section className="mb-28 sm:p-0 p-4">
       <h2 className="text-red text-center mb-5"> 
       <Link to='partners'> Parceiros </Link> </h2>
       <div className="container grid md:grid-cols-4 grid-cols-2 bg-gray-light p-4 items-baseline gap-4 rounded-2xl">

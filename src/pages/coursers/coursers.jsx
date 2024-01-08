@@ -70,8 +70,8 @@ function Coursers() {
 
   return(
     loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
-    <div className="container">
-      <BreadcrumbComponent breadcrumbs={breadcrumbs} className="mt-6" />
+    <div className="container sm:p-0 p-4">
+      <BreadcrumbComponent breadcrumbs={breadcrumbs} className="lg:mt-6 sm:mt-16 mt-12" />
 
       <h1 className="text-red text-center my-6">Módulos Educacionais</h1>
 
@@ -95,7 +95,7 @@ function Coursers() {
       {coursersLength > 0 ?
       <>
         <h5 className="text-f-black-light my-5"> <i> {coursers.length} de {coursersLength} resultados </i> </h5>
-        <div className="grid grid-cols-3 items-baseline gap-6">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 items-baseline gap-6">
           {coursers.map((course, index) => {
             return(
               <div key={index}> <CourseItem course={course} /> </div>

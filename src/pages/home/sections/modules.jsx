@@ -19,7 +19,7 @@ export default function Modules() {
 
 
   return(
-    <section className='w-full container flex flex-col my-24'>
+    <section className='w-full container flex flex-col my-24 sm:p-0 p-4'>
       <h2 className="text-red text-center"> Módulos Educacionais </h2>
 
       <div id='filter' className="flex items-center gap-5 mt-4">
