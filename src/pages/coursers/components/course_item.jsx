@@ -48,7 +48,7 @@ const CourseComponent = ({course}) => {
           <p> {course.duracao} </p>
         </span>
 
-        <Stars rating={course.avaliacao} gap="gap-2" />
+        <Stars rating={course.avaliacao} className="gap-2" />
       </div>
 
       <p className="line-clamp-4 font-medium my-3"> {course.resumo} </p>

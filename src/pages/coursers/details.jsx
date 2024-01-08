@@ -37,26 +37,26 @@ export default function CourseDetails() {
     loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
     <>
     <CourseHeader course={course} />
-      <div className="container">
+      <div className="container sm:p-0 p-4">
         <h1 className="text-red text-center mt-4"> Informações Gerais do Curso </h1>
         
-        <div className="flex items-center justify-between my-8 w-full">
-          <div className="flex items-center gap-3">
+        <div className="grid xl:grid-cols-5 grid-cols-2 my-8 gap-3 w-full">
+          <div className="flex items-center md:justify-center justify-normal gap-3">
             <img src={Clock} alt="relógio" />
             <p className="font-bold text-lg"> {handleDuration(course.duracao)} </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center md:justify-center justify-normal gap-3">
             <img src={Callendar} alt="calendario" />
             <p className="font-bold text-lg"> Desde {course.criado_em} </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center md:justify-center justify-normal gap-3">
             <img src={Peple_02} alt="Pessoas" />
             <p className="font-bold text-lg"> {course.matriculados.toLocaleString()} alunos matriculados </p>
           </div>
 
-          <Stars rating={course.avaliacao} ratingsNumber={course.numero_avaliacoes} />
+          <Stars rating={course.avaliacao} className="xl:col-span-2 col-span-1 flex justify-center items-center gap-2" ratingsNumber={course.numero_avaliacoes} />
         </div>
 
         <h3 className="text-red text-center mb-3"> Sobre o curso </h3>
@@ -75,7 +75,7 @@ export default function CourseDetails() {
         
 
         <h3 className="text-red text-center my-12"> Créditos </h3>
-        <div className="grid grid-cols-4 place-items-center place-content-center gap-4 mb-8">
+        <div className="grid lg:grid-cols-4 grid-cols-2 place-items-center place-content-center gap-4 mb-8">
           {course.creditos.map((credit, index) => {
             return(
               <div className="flex items-center justify-center h-40 w-full" key={index}>

@@ -1,4 +1,4 @@
-export const Stars = ({rating, gap='gap-4', ratingsNumber=''}) => {
+export const Stars = ({rating, className='gap-4', ratingsNumber=''}) => {
 
 
   const StarPath = ({index}) => {
@@ -16,7 +16,7 @@ export const Stars = ({rating, gap='gap-4', ratingsNumber=''}) => {
   }
 
   return(
-    <div className={ gap + " flex"}>
+    <div className={ className + " flex"}>
       { Array(5).fill('').map(( _, index) => {
         return(
           <svg key={index} xmlns="http://www.w3.org/2000/svg" fill='red' className="w-5 h-auto fill-current"

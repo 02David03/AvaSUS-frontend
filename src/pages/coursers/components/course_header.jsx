@@ -37,7 +37,7 @@ const CourseHeader = ({course}) => {
       </div>
 
       <div className="container z-20">
-        <BreadcrumbComponent breadcrumbs={breadcrumbs} color="white" className="mt-6 text-white" />
+        <BreadcrumbComponent breadcrumbs={breadcrumbs} color="white" className="lg:mt-6 mt-16 text-white" />
 
         <div className="h-1/5"></div>
         <h1 className="text-white"> {course.titulo} </h1>
@@ -46,18 +46,18 @@ const CourseHeader = ({course}) => {
       </div>
     </div>
     :
-    <div className='w-screen flex justify-center h-80 z-0'
+    <div className='w-screen flex justify-center h-80 sm:p-0 px-4 z-0'
     style={{backgroundImage:'url('+ course.capa +')',
       backgroundRepeat: "no-repeat",
       backgroundSize:"cover"}} >
         <div className="absolute h-80 bg-black opacity-75 w-screen z-10" />
         <div className="container z-20">
-          <BreadcrumbComponent breadcrumbs={breadcrumbs} color="white" className="mt-6 text-white" />
+          <BreadcrumbComponent breadcrumbs={breadcrumbs} color="white" className="lg:mt-6 mt-16 text-white" />
           
-          <div className="h-1/5"></div>
-          <h1 className="text-white"> {course.titulo} </h1>
+          <div className="xl:h-1/5 h-1/6"></div>
+          <h1 className="text-white lg:text-4xl sm:text-3xl text-2xl"> {course.titulo} </h1>
           
-          <h3 className="text-white mt-8"> {course.parceiros} </h3>
+          <h3 className="text-white lg:text-2xl sm:text-xl text-lg mt-8"> {course.parceiros} </h3>
         </div>
     </div>
     
