@@ -4,6 +4,7 @@ import { getPartners, getPartnersbyPage } from "../../sevices/partners";
 import { Spinner } from "@material-tailwind/react";
 import DecodeImg from "../../shared-components/decode_img";
 import BreadcrumbComponent from "../../shared-components/breadcrumb_component";
+import { NoDataMsg } from "../../shared-components/nodata_msg";
 
 function Partners() {
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ function Partners() {
   useEffect(() => {
     const getPartnersLength = async () => {
       const data = await getPartners();
-      setPartnersLength(data.length);
+      if(data) setPartnersLength(data.length);
     }
 
     getPartnersLength();
@@ -29,7 +30,7 @@ function Partners() {
     const fetchPartners = async () => {
       setLoading(true);
       const data = await getPartnersbyPage(currentPage);
-      setPartners(data);
+      if(data) setPartners(data);
       setLoading(false);
     }
 
@@ -37,7 +38,8 @@ function Partners() {
   }, [currentPage]);
 
   return(
-    loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> : 
+    loading ? <Spinner className="h-32 w-16 text-red/50 mt-40" /> :
+    partnersLength !== 0 ? 
     <div className="container sm:p-0 p-4">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} className="lg:mt-6 sm:mt-16 mt-12"/>
 
@@ -64,6 +66,7 @@ function Partners() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}/>
     </div>
+    : <NoDataMsg className='text-center text-gray-dark my-40'/>
   )
 }
 
