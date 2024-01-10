@@ -19,7 +19,7 @@ export default function Root() {
   return (
     <>
       {screenWidth > 1024 ? <Header /> : <SideBar /> }
-      <div className="flex flex-col items-center justify-center" id="detail">
+      <div className="flex flex-col items-center justify-center pt-[84px]" id="detail">
         <Outlet />
       </div>
       <Footer />

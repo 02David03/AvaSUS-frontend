@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return(
-    <header className='flex justify-center bg-white px-10 py-5 shadow-md'>
+    <header className='flex fixed z-50 w-full justify-center bg-white px-10 py-5 shadow-md'>
       <div className='container flex items-center justify-between '>
         <Link to={'/'}> <img src={AvasusImg} alt="Avasus" /> </Link>
         <div className='flex align-items-center gap-8 ms-12'>
