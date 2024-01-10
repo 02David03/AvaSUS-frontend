@@ -14,11 +14,11 @@ export const GeneralCard = ({generalData}) => {
     <div className="bg-gray-light rounded-2xl shadow-md w-full flex flex-col items-center mb-6 gap-5 p-6">
       <h3 className="text-red"> Dados Gerais</h3>
       
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6">
         <div className='flex items-center flex-col'>
           <span className='flex items-center gap-2'>
             <img src={People} alt="pessoas" />
-            <h4> Total de usuários registrados </h4>
+            <h4 className='text-center'> Total de usuários registrados </h4>
           </span>
           <h2 className='text-red'> {generalData.usuarios_registrados.toLocaleString()} </h2>
         </div>
@@ -26,7 +26,7 @@ export const GeneralCard = ({generalData}) => {
         <div className='flex items-center flex-col'>
           <span className='flex items-center gap-2'>
             <img src={Subscription} alt="inscrições" />
-            <h4> Inscrições realizadas </h4>
+            <h4 className='text-center'> Inscrições realizadas </h4>
           </span>
           <h2 className='text-red'> {generalData.incricoes_realizadas.toLocaleString()} </h2>
         </div>
@@ -34,7 +34,7 @@ export const GeneralCard = ({generalData}) => {
         <div className='flex items-center flex-col'>
           <span className='flex items-center gap-2'>
             <img src={CourseHat} alt="Chapéu de curso" />
-            <h4> Cursos ativos </h4>
+            <h4 className='text-center'> Cursos ativos </h4>
           </span>
           <h2 className='text-red'> {generalData.cursos_ativos.toLocaleString()} </h2>
         </div>
@@ -42,23 +42,23 @@ export const GeneralCard = ({generalData}) => {
         <div className='flex items-center flex-col'>
           <span className='flex items-center gap-2'>
             <img src={Certification} alt="certificação" />
-            <h4> Direito à Certificação </h4>
+            <h4 className='text-center'> Direito à Certificação </h4>
           </span>
           <h2 className='text-red'> {generalData.direito_certificacao.toLocaleString()} </h2>
         </div>
         
-        <div className='flex items-center flex-col col-span-2'>
+        <div className='flex items-center flex-col lg:col-span-2'>
           <span className='flex items-center gap-2'>
             <img src={CourseInvestiment} alt="investimento" />
-            <h4> Investimento médio por curso </h4>
+            <h4 className='text-center'> Investimento médio por curso </h4>
           </span>
           <h2 className='text-red'> {generalData.investimento_medio_curso} </h2>
         </div>
 
-        <div className='flex items-center flex-col col-span-2'>
+        <div className='flex items-center flex-col lg:col-span-2'>
           <span className='flex items-center gap-2'>
             <img src={StudentInvestiment} alt="students" />
-            <h4> Investimento médio por aluno </h4>
+            <h4 className='text-center'> Investimento médio por aluno </h4>
           </span>
           <h2 className='text-red'> {generalData.investimento_medio_aluno} </h2>
         </div>

@@ -12,13 +12,15 @@ export const UsersByCoursers = ({usersPerCourse}) => {
   return(
     <div className='bg-gray-light rounded-2xl shadow-md w-full flex flex-col items-center gap-5 px-10 py-6'>
       <h3 className="text-red"> Usuários por curso</h3>
-      <VictoryPie 
-        colorScale={colors}
-        data={data}
-        labelComponent= {<VictoryTooltip dy={0} centerOffset={{ x: 25 }}/>  }
-        x="curso"
-        y="usuarios"
-      />
+      <div className='lg:w-[450px] w-96 lg:h-[450px] h-96' >
+        <VictoryPie 
+          colorScale={colors}
+          data={data}
+          labelComponent= {<VictoryTooltip dy={0} centerOffset={{ x: 25 }}/>  }
+          x="curso"
+          y="usuarios"
+        />
+      </div>
       <div className='flex flex-col justify-start w-full'>
         {data.map((item, index) => {
           return(

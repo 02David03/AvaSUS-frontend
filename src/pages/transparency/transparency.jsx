@@ -40,7 +40,7 @@ export default function Transparency() {
 
       <h1 className="text-red text-center my-6">Transparência</h1>
         <GeneralCard generalData={generalData} />
-        <div className="grid grid-cols-2 gap-6 mb-40">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 mb-40">
           <UsersByCoursers usersPerCourse={usersPerCourse} />
           <UsersByState usersPerState={usersPerState} allUsers={generalData.usuarios_registrados} />
         </div>
