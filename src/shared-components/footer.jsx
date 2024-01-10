@@ -8,7 +8,7 @@ import Facebook from '../assets/icons/facebook.svg';
 const Footer = () => {
 
   return(
-    <footer className="w-screen">
+    <footer className="w-screen mt-auto">
       <div className="flex flex-col items-center justify-center bg-red py-4 md:py-8">
         <h3 className="text-white mb-2">
           Realização

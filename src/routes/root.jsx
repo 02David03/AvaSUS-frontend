@@ -17,12 +17,12 @@ export default function Root() {
   },[]);
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       {screenWidth > 1024 ? <Header /> : <SideBar /> }
-      <div className="flex flex-col items-center justify-center pt-[84px]" id="detail">
+      <div className="flex flex-col items-center justify-center lg:pt-[84px]" id="detail">
         <Outlet />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
