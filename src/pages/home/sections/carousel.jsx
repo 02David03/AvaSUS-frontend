@@ -2,6 +2,8 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import Slide01 from '../../../assets/images/slide1.jpg';
 import Slide02 from '../../../assets/images/slide2.jpg';
 import Slide03 from '../../../assets/images/slide3.jpg';
+import AvasusWhite from '../../../assets/images/avasus-white.png';
+import { Link } from "react-router-dom";
 
 export default function CarouselAvasus() {
   return (
@@ -10,7 +12,7 @@ export default function CarouselAvasus() {
         loop
         autoplay
         autoplayDelay={7000}
-        className="!h-760px"
+        className="!h-760px !w-screen"
         prevArrow={({handlePrev}) => arrowBtn(handlePrev)}
         nextArrow={({handleNext}) => arrowBtn(handleNext, false)}
         navigation={({ setActiveIndex, activeIndex, length }) => (
@@ -27,14 +29,71 @@ export default function CarouselAvasus() {
           </div>
         )}
       >
-        <img src={Slide01} alt="slide 1" className="h-full w-full object-cover" />
-
-        <img src={Slide02} alt="slide 2" className="h-full w-full object-cover" />
-
-        <img src={Slide03} alt="slide 3" className="h-full w-full object-cover" />
+        <FirstSlide />
+        <SecondSlide />
+        <ThirdSlide />
       </Carousel>
     </section>
   );
+}
+
+const FirstSlide = () => {
+  return(
+    <div className="h-full w-full object-cover">
+      <img src={Slide01} alt="slide 1" className="h-full w-full absolute z-0 object-cover" />
+      <div className="flex flex-col self-center ms-auto me-auto justify-center items-center z-10 relative h-full w-fit">
+        <img className="md:w-auto w-72 md:h-24 h-16" src={AvasusWhite} alt="Avasus" />
+        <div className="h-1 w-40 bg-white my-4 rounded-full"></div>
+        <h2 className="text-white text-center"> Conhecimento Aberto em Saúde </h2>
+        <Link to='/coursers'>
+          <button className="bg-white shadow-md rounded-full px-8 py-1 mt-2">
+            <h3 className="text-f-black-light">
+              Acesse os cursos
+            </h3>
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+const SecondSlide = () => {
+  return(
+    <div className="h-full w-full">
+      <img src={Slide03} alt="slide 2" className="h-full w-full absolute z-0 object-cover" />
+      <div className="flex flex-col self-center ms-auto me-auto justify-center items-center z-10 relative h-full w-fit">
+        <h1 className="text-white text-6xl"> Parceiros </h1>
+        <div className="h-1 w-40 bg-white my-4 rounded-full"></div>
+        <Link to='/partners'>
+          <button className="bg-white shadow-md rounded-full px-8 py-1 mt-2">
+            <h3 className="text-f-black-light">
+              Conheca nossos parceiros
+            </h3>
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+const ThirdSlide = () => {
+  return(
+    <div className="h-full w-full">
+      <img src={Slide02} alt="slide 3" className="h-full w-full absolute z-0 object-cover" />
+      <div className="flex flex-col self-center ms-auto me-auto justify-center items-center z-10 relative h-full w-fit">
+      <img className="md:w-auto w-72 md:h-24 h-16" src={AvasusWhite} alt="Avasus" />
+      <div className="h-1 w-40 bg-white my-4 rounded-full"></div>
+        <h2 className="text-white"> Transparência </h2>
+        <Link to='/transparency'>
+          <button className="bg-white shadow-md rounded-full px-8 py-1 mt-2">
+            <h3 className="text-f-black-light">
+              Acesse nossa transparência
+            </h3>
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
 }
 
 const arrowBtn = (handleMove, isPrev=true) => {
