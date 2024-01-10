@@ -39,7 +39,7 @@ const Module = ({course}) => {
       </div>
 
       <div className="flex sm:flex-row flex-col sm:items-center items-end justify-between 2xl:w-2/5 xl:w-1/2 w-full">
-        <div className="flex itemx-center justify-between w-full sm:me-4 me-0">
+        <div className="flex items-center justify-between w-full sm:me-4 me-0">
           <span className='flex items-center gap-2'>
             <img className='w-6' src={Peple_02} alt="people" />
             <p> {course.matriculados.toLocaleString()} </p>
@@ -64,7 +64,7 @@ const Module = ({course}) => {
 
 const LoadModule = () => {
   return(
-    <div className="flex animate-pulse items-center justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
+    <div className="flex xl:flex-row flex-col animate-pulse xl:items-center items-start justify-between gap-5 bg-gray-light rounded-2xl p-5 mt-4">
       <div className='flex h-full gap-4'>
         <div className="flex justify-center items-center h-32 w-32 rounded-md bg-gray dark:bg-gray-dark">
           <svg className="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
@@ -79,14 +79,17 @@ const LoadModule = () => {
         </div>
 
       </div>
+      <div className="flex sm:flex-row flex-col sm:items-center items-end justify-between gap-4 2xl:w-2/5 xl:w-1/2 w-full">
+        <div className="flex items-center justify-between w-full sm:me-4 gap-4 me-0">
+          <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
 
-      <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
+          <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
 
-      <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
+          <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
+        </div>
 
-      <div className="h-6 w-full rounded bg-gray dark:bg-gray-dark" />
-
-      <div className="h-12 w-full rounded bg-gray dark:bg-gray-dark" />
+        <div className="h-12 w-52 rounded bg-gray dark:bg-gray-dark" />
+      </div>
   
     </div>
   );
